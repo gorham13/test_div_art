@@ -18,3 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('/register', 'Auth\RegisterController@registration');
 Route::get('/register/verify/{confirmation_code}', 'Auth\RegisterController@confirm');
+Route::post('/login', 'Auth\LoginController@authenticate');
+Route::post('/reset', 'Auth\ResetPasswordController@reset');
+
+Route::post('/goods/create', 'GoodsController@create');
+Route::put('/goods/{id}', 'GoodsController@update');
+Route::delete('/goods/{id}', 'GoodsController@delete');
+Route::get('/goods/', 'GoodsController@get');
